@@ -1,7 +1,7 @@
 const express = require("express");
 const userRoutes = express.Router();
 
-routes.get('/users', (req, res) => {
+userRoutes.get('/', (req, res) => {
     console.log("URL: " + req.url);
     console.log("Method: " + req.method);
 
@@ -19,6 +19,17 @@ routes.get('/users', (req, res) => {
             email: "joaodasilva@teste.com"
         }]
     });
+
+});
+
+userRoutes.get("/admin", (req, res) => {
+    console.log("URL: " + req.url);
+    console.log("Method: " + req.method);
+
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "application/json");
+    res.json({
+        users: []});
 
 });
 

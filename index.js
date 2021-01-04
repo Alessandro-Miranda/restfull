@@ -2,10 +2,11 @@
 
 const express = require("express");
 const routesIndex = require("./routes/index");
-const routeUsersindex = require("./routes/users");
+const routesUser = require("./routes/users");
 const app = express();
 
-
+app.use(routesIndex);
+app.use('/users', routesUser);
 
 app.listen(3000, "127.0.0.1", () =>
 {
